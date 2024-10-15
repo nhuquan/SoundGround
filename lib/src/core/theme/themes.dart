@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:meloplay/src/data/services/hive_box.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class Themes {
   static final List<ThemeColor> _themes = [

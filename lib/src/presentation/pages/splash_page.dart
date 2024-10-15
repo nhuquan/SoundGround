@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'package:meloplay/src/core/constants/assets.dart';
-import 'package:meloplay/src/core/router/app_router.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
+import 'package:sound_ground/src/core/constants/assets.dart';
+import 'package:sound_ground/src/core/router/app_router.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -44,7 +43,7 @@ class _SplashPageState extends State<SplashPage> {
               height: 200,
             ),
             const Text(
-              'Meloplay',
+              'SoundGround',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 48,

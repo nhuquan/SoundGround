@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'package:meloplay/src/core/di/service_locator.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
-import 'package:meloplay/src/data/repositories/player_repository.dart';
-import 'package:meloplay/src/presentation/widgets/song_list_tile.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/data/repositories/player_repository.dart';
+import 'package:sound_ground/src/presentation/widgets/song_list_tile.dart';
 
 class QueuePage extends StatefulWidget {
   const QueuePage({super.key});

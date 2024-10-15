@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:meloplay/src/bloc/favorites/favorites_bloc.dart';
-import 'package:meloplay/src/bloc/song/song_bloc.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
-import 'package:meloplay/src/presentation/widgets/player_bottom_app_bar.dart';
-import 'package:meloplay/src/presentation/widgets/song_list_tile.dart';
+import 'package:sound_ground/src/bloc/favorites/favorites_bloc.dart';
+import 'package:sound_ground/src/bloc/song/song_bloc.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/presentation/widgets/player_bottom_app_bar.dart';
+import 'package:sound_ground/src/presentation/widgets/song_list_tile.dart';
 
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({super.key});

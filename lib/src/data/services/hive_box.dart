@@ -1,5 +1,5 @@
 class HiveBox {
-  static const String boxName = 'myBox';
+  static const String boxName = 'soundGround';
 
   static const String themeKey = 'theme';
 

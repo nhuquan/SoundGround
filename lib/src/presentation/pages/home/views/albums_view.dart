@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:meloplay/src/bloc/home/home_bloc.dart';
-import 'package:meloplay/src/core/router/app_router.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/bloc/home/home_bloc.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/core/router/app_router.dart';
 
 class AlbumsView extends StatefulWidget {
   const AlbumsView({super.key});

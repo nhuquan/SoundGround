@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
-import 'package:meloplay/src/data/repositories/theme_repository.dart';
+import 'package:sound_ground/src/data/repositories/theme_repository.dart';
 
 part 'theme_event.dart';
 part 'theme_state.dart';

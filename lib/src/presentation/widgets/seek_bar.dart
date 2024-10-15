@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meloplay/src/bloc/player/player_bloc.dart';
-import 'package:meloplay/src/data/repositories/player_repository.dart';
+import 'package:sound_ground/src/bloc/player/player_bloc.dart';
+import 'package:sound_ground/src/data/repositories/player_repository.dart';
 
 class SeekBar extends StatelessWidget {
   const SeekBar({

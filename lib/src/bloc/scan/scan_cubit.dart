@@ -2,8 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:hive/hive.dart';
 // ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
-
-import 'package:meloplay/src/data/services/hive_box.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
 
 part 'scan_state.dart';
 

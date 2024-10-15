@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:meloplay/src/data/services/hive_box.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class SongRepository {
   final box = Hive.box('myBox');

@@ -1,8 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
-import 'package:meloplay/src/data/repositories/recents_repository.dart';
-
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/data/repositories/recents_repository.dart';
 
 part 'recents_event.dart';
 part 'recents_state.dart';

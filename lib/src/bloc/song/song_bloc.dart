@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
-import 'package:meloplay/src/data/repositories/song_repository.dart';
+import 'package:sound_ground/src/data/repositories/song_repository.dart';
 
 part 'song_event.dart';
 part 'song_state.dart';

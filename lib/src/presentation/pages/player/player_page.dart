@@ -6,14 +6,13 @@ import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:marquee/marquee.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-
-import 'package:meloplay/src/bloc/player/player_bloc.dart';
-import 'package:meloplay/src/bloc/song/song_bloc.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
-import 'package:meloplay/src/data/repositories/player_repository.dart';
-import 'package:meloplay/src/data/repositories/song_repository.dart';
-import 'package:meloplay/src/presentation/widgets/animated_favorite_button.dart';
-import 'package:meloplay/src/presentation/widgets/seek_bar.dart';
+import 'package:sound_ground/src/bloc/player/player_bloc.dart';
+import 'package:sound_ground/src/bloc/song/song_bloc.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/data/repositories/player_repository.dart';
+import 'package:sound_ground/src/data/repositories/song_repository.dart';
+import 'package:sound_ground/src/presentation/widgets/animated_favorite_button.dart';
+import 'package:sound_ground/src/presentation/widgets/seek_bar.dart';
 
 class PlayerPage extends StatefulWidget {
   const PlayerPage({

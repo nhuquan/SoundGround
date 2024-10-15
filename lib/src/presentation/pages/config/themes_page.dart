@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meloplay/src/bloc/theme/theme_bloc.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
+import 'package:sound_ground/src/bloc/theme/theme_bloc.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
 
 class ThemesPage extends StatefulWidget {
   const ThemesPage({super.key});

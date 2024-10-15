@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:lottie/lottie.dart';
-import 'package:meloplay/src/bloc/scan/scan_cubit.dart';
-import 'package:meloplay/src/core/constants/assets.dart';
-import 'package:meloplay/src/core/extensions/string_extensions.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
-import 'package:meloplay/src/data/services/hive_box.dart';
+import 'package:sound_ground/src/bloc/scan/scan_cubit.dart';
+import 'package:sound_ground/src/core/constants/assets.dart';
+import 'package:sound_ground/src/core/extensions/string_extensions.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({super.key});

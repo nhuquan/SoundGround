@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
-import 'package:meloplay/src/data/services/hive_box.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class HomeRepository {
   final OnAudioQuery _audioQuery = sl<OnAudioQuery>();

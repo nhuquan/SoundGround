@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-
-import 'package:meloplay/src/bloc/search/search_bloc.dart';
-import 'package:meloplay/src/core/extensions/string_extensions.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
-import 'package:meloplay/src/presentation/widgets/song_list_tile.dart';
+import 'package:sound_ground/src/bloc/search/search_bloc.dart';
+import 'package:sound_ground/src/core/extensions/string_extensions.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/presentation/widgets/song_list_tile.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});

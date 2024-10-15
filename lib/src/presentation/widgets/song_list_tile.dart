@@ -5,15 +5,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:lottie/lottie.dart';
-import 'package:meloplay/src/core/helpers/helpers.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:permission_handler/permission_handler.dart';
-
-import 'package:meloplay/src/bloc/player/player_bloc.dart';
-import 'package:meloplay/src/core/constants/assets.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
-import 'package:meloplay/src/core/router/app_router.dart';
-import 'package:meloplay/src/data/repositories/player_repository.dart';
+import 'package:sound_ground/src/bloc/player/player_bloc.dart';
+import 'package:sound_ground/src/core/constants/assets.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/core/helpers/helpers.dart';
+import 'package:sound_ground/src/core/router/app_router.dart';
+import 'package:sound_ground/src/data/repositories/player_repository.dart';
 
 class SongListTile extends StatefulWidget {
   final SongModel song;

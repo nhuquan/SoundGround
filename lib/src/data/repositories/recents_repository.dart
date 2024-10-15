@@ -1,8 +1,8 @@
 // recents_repository.dart
 import 'package:hive_flutter/adapters.dart';
-import 'package:meloplay/src/data/services/hive_box.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class RecentsRepository {
   final box = Hive.box('myBox');

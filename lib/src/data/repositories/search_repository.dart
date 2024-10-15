@@ -1,6 +1,6 @@
-import 'package:meloplay/src/core/di/service_locator.dart';
-import 'package:meloplay/src/data/models/search_result.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/data/models/search_result.dart';
 
 class SearchRepository {
   final _audioQuery = sl<OnAudioQuery>();

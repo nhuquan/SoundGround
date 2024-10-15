@@ -1,6 +1,6 @@
-# 🎵 Meloplay
+# 🎵 SoundGround
 
-Meloplay is a local music player app that plays music from your device built with Flutter.
+SoundGround is a offline first music player app that plays music from your device.
 
 ## 📱 Platforms
 

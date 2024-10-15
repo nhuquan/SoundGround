@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:meloplay/src/bloc/playlists/playlists_cubit.dart';
-import 'package:meloplay/src/core/extensions/string_extensions.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-
-import 'package:meloplay/src/core/constants/assets.dart';
-import 'package:meloplay/src/core/router/app_router.dart';
+import 'package:sound_ground/src/bloc/playlists/playlists_cubit.dart';
+import 'package:sound_ground/src/core/constants/assets.dart';
+import 'package:sound_ground/src/core/extensions/string_extensions.dart';
+import 'package:sound_ground/src/core/router/app_router.dart';
 
 class PlaylistsView extends StatefulWidget {
   const PlaylistsView({super.key});

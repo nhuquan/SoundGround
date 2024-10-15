@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:hive/hive.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
-import 'package:meloplay/src/data/repositories/song_repository.dart';
-import 'package:meloplay/src/data/services/hive_box.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/data/repositories/song_repository.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
 
 abstract class MusicPlayer {
   Future<void> init();

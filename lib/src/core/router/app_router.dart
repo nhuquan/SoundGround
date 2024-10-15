@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:meloplay/src/presentation/pages/config/scan_page.dart';
-import 'package:meloplay/src/presentation/pages/config/settings_page.dart';
-import 'package:meloplay/src/presentation/pages/playlists/playlist_details_page.dart';
-import 'package:meloplay/src/presentation/pages/player/queue_page.dart';
-import 'package:meloplay/src/presentation/pages/home/search_page.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-
-import 'package:meloplay/src/presentation/pages/details/album_page.dart';
-import 'package:meloplay/src/presentation/pages/details/artist_page.dart';
-import 'package:meloplay/src/presentation/pages/playlists/favorites_page.dart';
-import 'package:meloplay/src/presentation/pages/details/genre_page.dart';
-import 'package:meloplay/src/presentation/pages/home/home_page.dart';
-import 'package:meloplay/src/presentation/pages/player/player_page.dart';
-import 'package:meloplay/src/presentation/pages/playlists/recents_page.dart';
-import 'package:meloplay/src/presentation/pages/config/themes_page.dart';
-import 'package:meloplay/src/presentation/pages/splash_page.dart';
+import 'package:sound_ground/src/presentation/pages/config/scan_page.dart';
+import 'package:sound_ground/src/presentation/pages/config/settings_page.dart';
+import 'package:sound_ground/src/presentation/pages/config/themes_page.dart';
+import 'package:sound_ground/src/presentation/pages/details/album_page.dart';
+import 'package:sound_ground/src/presentation/pages/details/artist_page.dart';
+import 'package:sound_ground/src/presentation/pages/details/genre_page.dart';
+import 'package:sound_ground/src/presentation/pages/home/home_page.dart';
+import 'package:sound_ground/src/presentation/pages/home/search_page.dart';
+import 'package:sound_ground/src/presentation/pages/player/player_page.dart';
+import 'package:sound_ground/src/presentation/pages/player/queue_page.dart';
+import 'package:sound_ground/src/presentation/pages/playlists/favorites_page.dart';
+import 'package:sound_ground/src/presentation/pages/playlists/playlist_details_page.dart';
+import 'package:sound_ground/src/presentation/pages/playlists/recents_page.dart';
+import 'package:sound_ground/src/presentation/pages/splash_page.dart';
 
 class AppRouter {
   static const String splashRoute = '/';

@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:permission_handler/permission_handler.dart';
-
-import 'package:meloplay/src/bloc/theme/theme_bloc.dart';
-import 'package:meloplay/src/core/constants/assets.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
-import 'package:meloplay/src/core/router/app_router.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
-import 'package:meloplay/src/presentation/pages/home/views/albums_view.dart';
-import 'package:meloplay/src/presentation/pages/home/views/artists_view.dart';
-import 'package:meloplay/src/presentation/pages/home/views/genres_view.dart';
-import 'package:meloplay/src/presentation/pages/home/views/playlists_view.dart';
-import 'package:meloplay/src/presentation/pages/home/views/songs_view.dart';
-import 'package:meloplay/src/presentation/widgets/player_bottom_app_bar.dart';
+import 'package:sound_ground/src/bloc/theme/theme_bloc.dart';
+import 'package:sound_ground/src/core/constants/assets.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/core/router/app_router.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/presentation/pages/home/views/albums_view.dart';
+import 'package:sound_ground/src/presentation/pages/home/views/artists_view.dart';
+import 'package:sound_ground/src/presentation/pages/home/views/genres_view.dart';
+import 'package:sound_ground/src/presentation/pages/home/views/playlists_view.dart';
+import 'package:sound_ground/src/presentation/pages/home/views/songs_view.dart';
+import 'package:sound_ground/src/presentation/widgets/player_bottom_app_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -129,7 +128,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   AppBar _buildAppBar() {
     return AppBar(
       backgroundColor: Themes.getTheme().primaryColor,
-      title: const Text('Meloplay'),
+      title: const Text('SoundGround'),
       // search button
       actions: [
         IconButton(
@@ -168,7 +167,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       width: 8,
                     ),
                     const Text(
-                      'Meloplay',
+                      'SoundGround',
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,

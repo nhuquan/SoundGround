@@ -6,14 +6,13 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-
-import 'package:meloplay/src/bloc/home/home_bloc.dart';
-import 'package:meloplay/src/bloc/player/player_bloc.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
-import 'package:meloplay/src/core/extensions/string_extensions.dart';
-import 'package:meloplay/src/data/repositories/player_repository.dart';
-import 'package:meloplay/src/data/services/hive_box.dart';
-import 'package:meloplay/src/presentation/widgets/song_list_tile.dart';
+import 'package:sound_ground/src/bloc/home/home_bloc.dart';
+import 'package:sound_ground/src/bloc/player/player_bloc.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/core/extensions/string_extensions.dart';
+import 'package:sound_ground/src/data/repositories/player_repository.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
+import 'package:sound_ground/src/presentation/widgets/song_list_tile.dart';
 
 class SongsView extends StatefulWidget {
   const SongsView({super.key});

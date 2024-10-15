@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meloplay/src/bloc/playlists/playlists_cubit.dart';
-import 'package:meloplay/src/bloc/home/home_bloc.dart';
-import 'package:meloplay/src/core/router/app_router.dart';
-import 'package:meloplay/src/presentation/widgets/player_bottom_app_bar.dart';
-import 'package:meloplay/src/presentation/widgets/song_list_tile.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
+import 'package:sound_ground/src/bloc/home/home_bloc.dart';
+import 'package:sound_ground/src/bloc/playlists/playlists_cubit.dart';
+import 'package:sound_ground/src/core/router/app_router.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/presentation/widgets/player_bottom_app_bar.dart';
+import 'package:sound_ground/src/presentation/widgets/song_list_tile.dart';
 
 class PlaylistDetailsPage extends StatefulWidget {
   final PlaylistModel playlist;

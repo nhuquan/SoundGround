@@ -1,11 +1,11 @@
 // favorites_repository.dart
 import 'package:hive_flutter/adapters.dart';
-import 'package:meloplay/src/data/services/hive_box.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class FavoritesRepository {
-  final box = Hive.box('myBox');
+  final box = Hive.box(HiveBox.boxName);
   Future<List<SongModel>> fetchFavorites() async {
     List<String> favoriteSongsIds = box.get(
       HiveBox.favoriteSongsKey,

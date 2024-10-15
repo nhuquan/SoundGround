@@ -4,17 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
-
-import 'package:meloplay/src/bloc/player/player_bloc.dart' as bloc;
-import 'package:meloplay/src/bloc/theme/theme_bloc.dart';
-import 'package:meloplay/src/core/di/service_locator.dart';
-import 'package:meloplay/src/core/router/app_router.dart';
-import 'package:meloplay/src/core/theme/themes.dart';
-import 'package:meloplay/src/data/repositories/player_repository.dart';
-import 'package:meloplay/src/data/repositories/recents_repository.dart';
-import 'package:meloplay/src/presentation/widgets/seek_bar.dart';
-import 'package:meloplay/src/presentation/widgets/spinning_disc_animation.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/bloc/player/player_bloc.dart' as bloc;
+import 'package:sound_ground/src/bloc/theme/theme_bloc.dart';
+import 'package:sound_ground/src/core/di/service_locator.dart';
+import 'package:sound_ground/src/core/router/app_router.dart';
+import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/data/repositories/player_repository.dart';
+import 'package:sound_ground/src/data/repositories/recents_repository.dart';
+import 'package:sound_ground/src/presentation/widgets/seek_bar.dart';
+import 'package:sound_ground/src/presentation/widgets/spinning_disc_animation.dart';
 
 class PlayerBottomAppBar extends StatefulWidget {
   const PlayerBottomAppBar({
