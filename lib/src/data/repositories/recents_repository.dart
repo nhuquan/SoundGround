@@ -5,7 +5,7 @@ import 'package:sound_ground/src/core/di/service_locator.dart';
 import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class RecentsRepository {
-  final box = Hive.box('myBox');
+  final box = Hive.box(HiveBox.boxName);
 
   Future<List<SongModel>> fetchRecents() async {
     List<String> recentSongsIds = box.get(

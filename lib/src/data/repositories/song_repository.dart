@@ -2,9 +2,8 @@ import 'package:hive/hive.dart';
 import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class SongRepository {
-  final box = Hive.box('myBox');
-  static const int maxRecentlyPlayed =
-      50; // Maximum number of recently played songs to store
+  final box = Hive.box(HiveBox.boxName);
+  static const int maxRecentlyPlayed = 50; // Maximum number of recently played songs to store
 
   Future<void> toggleFavorite(String songId) async {
     List<String> favoriteSongs = box.get(
