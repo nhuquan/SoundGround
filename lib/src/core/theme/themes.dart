@@ -4,29 +4,29 @@ import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class Themes {
   static final List<ThemeColor> _themes = [
-    PurpleTheme(),
+    // PurpleTheme(),
     BlueTheme(),
     GreenTheme(),
-    OrangeTheme(),
+    // OrangeTheme(),
     YellowTheme(),
-    TealTheme(),
-    RedTheme(),
+    // TealTheme(),
+    // RedTheme(),
     BlackTheme(),
     WhiteTheme(),
-    GrayTheme(),
+    // GrayTheme(),
   ];
 
   static final List<String> _themeNames = [
-    'Purple',
+    // 'Purple',
     'Blue',
     'Green',
-    'Orange',
+    // 'Orange',
     'Yellow',
-    'Teal',
-    'Red',
+    // 'Teal',
+    // 'Red',
     'Black',
     'White',
-    'Gray',
+    // 'Gray',
   ];
 
   static get themes => _themes;
@@ -34,26 +34,26 @@ class Themes {
 
   static ThemeColor getThemeFromKey(String key) {
     switch (key) {
-      case 'Purple':
-        return _themes[0];
+      // case 'Purple':
+      //   return _themes[0];
       case 'Blue':
-        return _themes[1];
+        return _themes[0];
       case 'Green':
-        return _themes[2];
-      case 'Orange':
-        return _themes[3];
+        return _themes[1];
+      // case 'Orange':
+      //   return _themes[3];
       case 'Yellow':
-        return _themes[4];
-      case 'Teal':
-        return _themes[5];
-      case 'Red':
-        return _themes[6];
+        return _themes[2];
+      // case 'Teal':
+      //   return _themes[5];
+      // case 'Red':
+      //   return _themes[6];
       case 'Black':
-        return _themes[7];
+        return _themes[3];
       case 'White':
-        return _themes[8];
-      case 'Gray':
-        return _themes[9];
+        return _themes[4];
+      // case 'Gray':
+      //   return _themes[9];
       default:
         return _themes[0];
     }
