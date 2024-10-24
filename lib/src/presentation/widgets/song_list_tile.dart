@@ -146,7 +146,7 @@ class _SongListTileState extends State<SongListTile> {
 
   Text _buildSubtitle() {
     String subtitle =
-        '${widget.song.artist ?? 'Unknown'} | ${widget.song.album ?? 'Unknown'}';
+        '${widget.song.artist ?? 'Unknown'}}';
     return Text(
       subtitle,
       maxLines: 1,
@@ -199,81 +199,81 @@ class _SongListTileState extends State<SongListTile> {
                 Navigator.of(context).pop();
               },
             ),
-            ListTile(
-              leading: const Icon(Icons.delete_outlined),
-              title: const Text('Delete'),
-              onTap: () {
-                // Show a confirmation dialog before deleting the song
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: const Text('Delete Song'),
-                      content: const Text(
-                          'Are you sure you want to delete this song?'),
-                      actions: <Widget>[
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Text('Cancel'),
-                        ),
-                        TextButton(
-                          onPressed: () async {
-                            // Delete the song from the database
-                            final file = File(widget.song.data);
-
-                            if (await file.exists()) {
-                              debugPrint('Deleting ${widget.song.title}');
-                              try {
-                                // ask for permission to manage external storage if not granted
-                                if (!await Permission
-                                    .manageExternalStorage.isGranted) {
-                                  final status = await Permission
-                                      .manageExternalStorage
-                                      .request();
-
-                                  if (status.isGranted) {
-                                    debugPrint('Permission granted');
-                                  } else {
-                                    if (context.mounted) {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        const SnackBar(
-                                          content: Text(
-                                            'Permission denied',
-                                          ),
-                                          backgroundColor: Colors.red,
-                                        ),
-                                      );
-                                    }
-                                  }
-                                }
-                                await file.delete();
-                                debugPrint('Deleted ${widget.song.title}');
-                              } catch (e) {
-                                debugPrint(
-                                    'Failed to delete ${widget.song.title}');
-                              }
-                            } else {
-                              debugPrint(
-                                  'File does not exist ${widget.song.title}');
-                            }
-
-                            // TODO: Remove the song from the list
-                            if (context.mounted) {
-                              Navigator.of(context).pop();
-                              Navigator.of(context).pop();
-                            }
-                          },
-                          child: const Text('Delete'),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
-            ),
+            // ListTile(
+            //   leading: const Icon(Icons.delete_outlined),
+            //   title: const Text('Delete'),
+            //   onTap: () {
+            //     // Show a confirmation dialog before deleting the song
+            //     showDialog(
+            //       context: context,
+            //       builder: (BuildContext context) {
+            //         return AlertDialog(
+            //           title: const Text('Delete Song'),
+            //           content: const Text(
+            //               'Are you sure you want to delete this song?'),
+            //           actions: <Widget>[
+            //             TextButton(
+            //               onPressed: () {
+            //                 Navigator.of(context).pop();
+            //               },
+            //               child: const Text('Cancel'),
+            //             ),
+            //             TextButton(
+            //               onPressed: () async {
+            //                 // Delete the song from the database
+            //                 final file = File(widget.song.data);
+            //
+            //                 if (await file.exists()) {
+            //                   debugPrint('Deleting ${widget.song.title}');
+            //                   try {
+            //                     // ask for permission to manage external storage if not granted
+            //                     if (!await Permission
+            //                         .manageExternalStorage.isGranted) {
+            //                       final status = await Permission
+            //                           .manageExternalStorage
+            //                           .request();
+            //
+            //                       if (status.isGranted) {
+            //                         debugPrint('Permission granted');
+            //                       } else {
+            //                         if (context.mounted) {
+            //                           ScaffoldMessenger.of(context)
+            //                               .showSnackBar(
+            //                             const SnackBar(
+            //                               content: Text(
+            //                                 'Permission denied',
+            //                               ),
+            //                               backgroundColor: Colors.red,
+            //                             ),
+            //                           );
+            //                         }
+            //                       }
+            //                     }
+            //                     await file.delete();
+            //                     debugPrint('Deleted ${widget.song.title}');
+            //                   } catch (e) {
+            //                     debugPrint(
+            //                         'Failed to delete ${widget.song.title}');
+            //                   }
+            //                 } else {
+            //                   debugPrint(
+            //                       'File does not exist ${widget.song.title}');
+            //                 }
+            //
+            //                 // TODO: Remove the song from the list
+            //                 if (context.mounted) {
+            //                   Navigator.of(context).pop();
+            //                   Navigator.of(context).pop();
+            //                 }
+            //               },
+            //               child: const Text('Delete'),
+            //             ),
+            //           ],
+            //         );
+            //       },
+            //     );
+            //   },
+            // ),
             ListTile(
               leading: const Icon(Icons.share_outlined),
               title: const Text('Share'),

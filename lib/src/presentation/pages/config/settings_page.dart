@@ -75,16 +75,18 @@ class _SettingsPageState extends State<SettingsPage> {
                 // ListTile(
                 //   leading: const Icon(Icons.language_outlined),
                 //   title: const Text('Language'),
-                //   onTap: () async {},
+                //   onTap: () async {
+                //
+                //   },
                 // ),
                 // theme
-                ListTile(
-                  leading: const Icon(Icons.color_lens_outlined),
-                  title: const Text('Themes'),
-                  onTap: () async {
-                    Navigator.of(context).pushNamed(AppRouter.themesRoute);
-                  },
-                ),
+                // ListTile(
+                //   leading: const Icon(Icons.color_lens_outlined),
+                //   title: const Text('Themes'),
+                //   onTap: () async {
+                //     Navigator.of(context).pushNamed(AppRouter.themesRoute);
+                //   },
+                // ),
                 // package info
                 _buildPackageInfoTile(context),
               ],
