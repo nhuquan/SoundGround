@@ -329,6 +329,10 @@ class _PlayerPageState extends State<PlayerPage> {
 
                           MediaItem? mediaItem =
                               sequence!.sequence[sequence.currentIndex].tag;
+                          String artisName = mediaItem?.artist ?? '-';
+                          if (artisName == '<unknown>') {
+                            artisName = '-';
+                          }
 
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -360,7 +364,7 @@ class _PlayerPageState extends State<PlayerPage> {
                                       ),
                               ),
                               Text(
-                                mediaItem.artist ?? 'Unknown',
+                                artisName,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(

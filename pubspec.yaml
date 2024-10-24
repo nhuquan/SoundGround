@@ -1,5 +1,5 @@
 name: sound_ground
-description: "SoundGround is a fork from Meloplay"
+description: "SoundGround is offline music player app that allows you to play music from your device."
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0
 

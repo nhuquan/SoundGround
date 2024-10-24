@@ -129,6 +129,11 @@ class _PlayerBottomAppBarState extends State<PlayerBottomAppBar> {
   }
 
   _buildExpanded(SequenceState sequence, MediaItem mediaItem) {
+    String artisName = mediaItem.artist ?? '-';
+    if (mediaItem.artist == '<unknown>' || mediaItem.artist == '') {
+      artisName = '-';
+    }
+
     return Stack(
       children: [
         QueryArtworkWidget(
@@ -180,7 +185,7 @@ class _PlayerBottomAppBarState extends State<PlayerBottomAppBar> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  mediaItem.artist ?? 'Unknown',
+                  artisName,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
@@ -354,6 +359,11 @@ class _SwipeSongState extends State<SwipeSong> {
           },
           itemBuilder: (context, index) {
             MediaItem mediaItem = widget.sequence?.sequence[index].tag;
+            String artisName = mediaItem.artist ?? '-';
+            if (mediaItem.artist == '<unknown>' || mediaItem.artist == '') {
+              artisName = '-';
+            }
+
             return Row(
               children: [
                 SpinningDisc(
@@ -374,7 +384,7 @@ class _SwipeSongState extends State<SwipeSong> {
                         ),
                       ),
                       Text(
-                        mediaItem.artist ?? 'Unknown',
+                        artisName,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(

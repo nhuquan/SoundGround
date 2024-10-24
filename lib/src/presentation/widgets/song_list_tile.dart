@@ -1,12 +1,9 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:lottie/lottie.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:sound_ground/src/bloc/player/player_bloc.dart';
 import 'package:sound_ground/src/core/constants/assets.dart';
 import 'package:sound_ground/src/core/di/service_locator.dart';
@@ -145,8 +142,12 @@ class _SongListTileState extends State<SongListTile> {
   }
 
   Text _buildSubtitle() {
-    String subtitle =
-        '${widget.song.artist ?? 'Unknown'}}';
+    final String subtitle;
+    if (widget.song.artist != null && widget.song.artist != '<unknown>') {
+      subtitle = widget.song.artist!;
+    } else {
+      subtitle = '-';
+    }
     return Text(
       subtitle,
       maxLines: 1,

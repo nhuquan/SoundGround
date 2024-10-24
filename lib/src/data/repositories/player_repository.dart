@@ -52,8 +52,8 @@ class JustAudioPlayer implements MusicPlayer {
   @override
   Future<void> init() async {
     await JustAudioBackground.init(
-      androidNotificationChannelId: 'com.shokhrukhbek.meloplay.channel.audio',
-      androidNotificationChannelName: 'Meloplay',
+      androidNotificationChannelId: 'dev.livana.soundground.channel.audio',
+      androidNotificationChannelName: 'SoundGround',
       androidNotificationOngoing: true,
       androidStopForegroundOnPause: true,
     );

@@ -55,6 +55,10 @@ class _ArtistsViewState extends State<ArtistsView>
                 itemCount: artists.length,
                 itemBuilder: (context, index) {
                   final artist = artists[index];
+                  String artisName = artist.artist;
+                  if (artist.artist == '<unknown>' || artist.artist == '') {
+                    artisName = '-';
+                  }
 
                   return AnimationConfiguration.staggeredGrid(
                     position: index,
@@ -91,7 +95,7 @@ class _ArtistsViewState extends State<ArtistsView>
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              artist.artist,
+                              artisName,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(

@@ -1,6 +1,5 @@
 class Links {
-  static const String sourceCode =
-      'https://github.com/ShokhrukhbekYuldoshev/Meloplay';
+  static const String sourceCode = 'https://github.com/nhuquan/SoundGround';
 }
 
 class Assets {

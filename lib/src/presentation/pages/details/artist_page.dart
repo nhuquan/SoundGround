@@ -45,6 +45,11 @@ class _ArtistPageState extends State<ArtistPage> {
 
   @override
   Widget build(BuildContext context) {
+    String artisName = widget.artist.artist;
+    if (artisName == '<unknown>' || artisName == '') {
+      artisName = '-';
+    }
+
     return Scaffold(
       // current song, play/pause button, song progress bar, song queue button
       bottomNavigationBar: const PlayerBottomAppBar(),
@@ -64,18 +69,18 @@ class _ArtistPageState extends State<ArtistPage> {
                 title: LayoutBuilder(
                   builder: (context, constraints) {
                     bool isLarge = constraints.maxHeight > 100;
-                    bool isLong = widget.artist.artist.length > 20;
+                    bool isLong = artisName.length > 20;
 
                     if (isLarge) {
                       return Text(
-                        widget.artist.artist,
+                        artisName,
                         style: const TextStyle(
                           color: Colors.white,
                         ),
                       );
                     } else if (!isLong) {
                       return Text(
-                        widget.artist.artist,
+                        artisName,
                         style: TextStyle(
                           color: calculateTextColor(
                             Theme.of(context).scaffoldBackgroundColor,
@@ -88,7 +93,7 @@ class _ArtistPageState extends State<ArtistPage> {
                     } else {
                       return Marquee(
                         crossAxisAlignment: CrossAxisAlignment.end,
-                        text: widget.artist.artist,
+                        text: artisName,
                         style: TextStyle(
                           color: calculateTextColor(
                             Theme.of(context).scaffoldBackgroundColor,

@@ -7,6 +7,7 @@ import 'package:sound_ground/src/core/constants/assets.dart';
 import 'package:sound_ground/src/core/di/service_locator.dart';
 import 'package:sound_ground/src/core/router/app_router.dart';
 import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/presentation/pages/home/views/artists_view.dart';
 import 'package:sound_ground/src/presentation/pages/home/views/playlists_view.dart';
 import 'package:sound_ground/src/presentation/pages/home/views/songs_view.dart';
 import 'package:sound_ground/src/presentation/widgets/player_bottom_app_bar.dart';
@@ -43,6 +44,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   final tabs = [
     'Songs',
     'Playlists',
+    'Artists',
   ];
 
   @override
@@ -92,6 +94,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     children: const [
                       SongsView(),
                       PlaylistsView(),
+                      ArtistsView(),
                     ],
                   ),
                 ),
