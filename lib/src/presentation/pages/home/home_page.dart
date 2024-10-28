@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:sound_ground/src/bloc/language/language_cubit.dart';
 import 'package:sound_ground/src/bloc/theme/theme_bloc.dart';
 import 'package:sound_ground/src/core/constants/assets.dart';
 import 'package:sound_ground/src/core/di/service_locator.dart';
 import 'package:sound_ground/src/core/router/app_router.dart';
 import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/l10n/build_context_ext.dart';
 import 'package:sound_ground/src/presentation/pages/home/views/artists_view.dart';
 import 'package:sound_ground/src/presentation/pages/home/views/playlists_view.dart';
 import 'package:sound_ground/src/presentation/pages/home/views/songs_view.dart';
@@ -49,6 +51,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    context.read<LanguageCubit>().changeStartLang();
+
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, state) {
         return Scaffold(
@@ -73,21 +77,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ? Column(
               children: [
                 TabBar(
-                  dividerColor:
-                      Theme.of(context).colorScheme.onPrimary.withOpacity(
-                            0.3,
-                          ),
-                  tabAlignment: TabAlignment.center,
-                  isScrollable: true,
-                  controller: _tabController,
-                  tabs: tabs
-                      .map(
-                        (e) => Tab(
-                          text: e,
-                        ),
-                      )
-                      .toList(),
-                ),
+                    dividerColor:
+                        Theme.of(context).colorScheme.onPrimary.withOpacity(
+                              0.3,
+                            ),
+                    tabAlignment: TabAlignment.center,
+                    isScrollable: true,
+                    controller: _tabController,
+                    tabs: [
+                      Text(
+                        context.l10n.homePageSongTabTitle,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      Text(context.l10n.homePagePlaylistTabTitle,
+                          style: Theme.of(context).textTheme.titleMedium),
+                      Text(context.l10n.homePageArtistsTabTitle,
+                          style: Theme.of(context).textTheme.titleMedium),
+                    ]),
                 Expanded(
                   child: TabBarView(
                     controller: _tabController,
@@ -122,7 +128,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   AppBar _buildAppBar() {
     return AppBar(
       backgroundColor: Themes.getTheme().primaryColor,
-      title: const Text('SoundGround'),
+      title: Text(context.l10n.appTitle,
+          style: Theme.of(context).textTheme.titleLarge),
       // search button
       actions: [
         IconButton(
@@ -130,7 +137,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             Navigator.of(context).pushNamed(AppRouter.searchRoute);
           },
           icon: const Icon(Icons.search_outlined),
-          tooltip: 'Search',
+          tooltip: context.l10n.searchBoxHintText,
         )
       ],
     );
@@ -160,8 +167,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     const SizedBox(
                       width: 8,
                     ),
-                    const Text(
-                      'SoundGround',
+                    Text(
+                      context.l10n.appTitle,
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -175,7 +182,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           // themes
           ListTile(
             leading: const Icon(Icons.color_lens_outlined),
-            title: const Text('Themes'),
+            title: Text(context.l10n.themePageTitle),
             onTap: () {
               Navigator.of(context).pushNamed(AppRouter.themesRoute);
             },
@@ -183,7 +190,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           // settings
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
+            title: Text(context.l10n.settingsPageTitle),
             onTap: () {
               Navigator.of(context).pushNamed(AppRouter.settingsRoute);
             },

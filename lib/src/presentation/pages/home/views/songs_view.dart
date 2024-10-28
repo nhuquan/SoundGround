@@ -12,6 +12,7 @@ import 'package:sound_ground/src/core/di/service_locator.dart';
 import 'package:sound_ground/src/core/extensions/string_extensions.dart';
 import 'package:sound_ground/src/data/repositories/player_repository.dart';
 import 'package:sound_ground/src/data/services/hive_box.dart';
+import 'package:sound_ground/src/l10n/build_context_ext.dart';
 import 'package:sound_ground/src/presentation/widgets/song_list_tile.dart';
 
 class SongsView extends StatefulWidget {
@@ -51,7 +52,7 @@ class _SongsViewState extends State<SongsView>
           });
 
           Fluttertoast.showToast(
-            msg: '${state.songs.length} songs found',
+            msg: '${state.songs.length} ${context.l10n.songViewToastMessage}',
           );
         }
       },
@@ -74,7 +75,7 @@ class _SongsViewState extends State<SongsView>
                         children: [
                           // number of songs
                           Text(
-                            '${songs.length} songs',
+                            '${songs.length} ${context.l10n.songViewSongCount}',
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                           // sort button
@@ -110,13 +111,6 @@ class _SongsViewState extends State<SongsView>
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Icon(Icons.shuffle),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      'Shuffle',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium,
-                                    ),
                                   ],
                                 ),
                                 onTap: () {
@@ -155,13 +149,6 @@ class _SongsViewState extends State<SongsView>
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Icon(Icons.play_arrow),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      'Play',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium,
-                                    ),
                                   ],
                                 ),
                                 onTap: () {
@@ -254,11 +241,11 @@ class _SortBottomSheetState extends State<SortBottomSheet> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 16),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              'Sort by',
-              style: TextStyle(
+              context.l10n.songViewSortBy,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -282,11 +269,11 @@ class _SortBottomSheetState extends State<SortBottomSheet> {
               },
             ),
           const SizedBox(height: 16),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              'Order by',
-              style: TextStyle(
+              context.l10n.songViewOrderBy,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),

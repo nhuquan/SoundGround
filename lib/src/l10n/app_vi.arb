@@ -1,0 +1,21 @@
+{
+  "appTitle" : "SoundGround",
+  "themePageTitle": "Màu sắc",
+  "settingsPageTitle": "Cài đặt",
+  "settingsPageScanMusicButton": "Tìm kiếm bài hát",
+  "settingsPageScanMusicButtonSubtitle": "Bỏ qua bài hát không đáp ứng yêu cầu",
+  "settingsPageLanguageButton": "Ngôn ngữ",
+  "settingsPageVersionButton": "Phiên bản ứng dụng",
+  "scanPageTitle": "Tìm kiếm bài hát",
+  "scanPageMinDuration": "Thời lượng tối thiểu:",
+  "scanPageDurationUnit": "giây",
+  "scanPageMinSize": "Dung lượng tối thiểu:",
+  "homePageSongTabTitle": "Bài hát",
+  "homePagePlaylistTabTitle": "Danh sách",
+  "homePageArtistsTabTitle": "Ca sĩ",
+  "songViewSortBy": "Xếp theo",
+  "songViewOrderBy": "Thứ tự",
+  "songViewToastMessage": "bài hát được tìm thấy",
+  "songViewSongCount": "bài hát",
+  "searchBoxHintText": "Tìm kiếm theo tên bài hát"
+}

@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:sound_ground/src/bloc/favorites/favorites_bloc.dart';
 import 'package:sound_ground/src/bloc/home/home_bloc.dart';
+import 'package:sound_ground/src/bloc/language/language_cubit.dart';
 import 'package:sound_ground/src/bloc/player/player_bloc.dart';
 import 'package:sound_ground/src/bloc/playlists/playlists_cubit.dart';
 import 'package:sound_ground/src/bloc/recents/recents_bloc.dart';
@@ -31,6 +32,7 @@ void init() {
   // Cubit
   sl.registerFactory(() => ScanCubit());
   sl.registerFactory(() => PlaylistsCubit());
+  sl.registerFactory(() => LanguageCubit());
 
   // Repository
   sl.registerLazySingleton(() => ThemeRepository());

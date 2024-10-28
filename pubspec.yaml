@@ -8,15 +8,19 @@ environment:
 
 dependencies:
   bloc: ^8.1.4 # state management
+  equatable: ^2.0.5
   flutter:
     sdk: flutter # flutter sdk
   flutter_bloc: ^8.1.6 # state management
   flutter_cache_manager: ^3.4.1
+  flutter_localizations:
+    sdk: flutter
   flutter_staggered_animations: ^1.1.1 # animation
   fluttertoast: ^8.2.8
   get_it: ^8.0.0 # dependency injection
   hive: ^2.2.3 # local database
   hive_flutter: ^1.1.0 # local database
+  intl: any
   just_audio: ^0.9.41 # audio player
   just_audio_background: ^0.0.1-beta.11 # audio player background
   lottie: ^3.1.2
@@ -26,6 +30,7 @@ dependencies:
   permission_handler: ^11.3.1 # get permission
   rxdart: ^0.28.0 # stream
   share_plus: ^10.0.2 # share song
+  shared_preferences: ^2.3.2
   url_launcher: ^6.3.0 # open url
 
 dev_dependencies:
@@ -39,6 +44,7 @@ dependency_overrides:
   fading_edge_scrollview: ^4.1.1
 
 flutter:
+  generate: true
   uses-material-design: true
   assets:
     - assets/icon/

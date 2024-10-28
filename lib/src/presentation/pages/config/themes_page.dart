@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sound_ground/src/bloc/theme/theme_bloc.dart';
 import 'package:sound_ground/src/core/theme/themes.dart';
+import 'package:sound_ground/src/l10n/build_context_ext.dart';
 
 class ThemesPage extends StatefulWidget {
   const ThemesPage({super.key});
@@ -27,8 +28,8 @@ class _ThemesPageState extends State<ThemesPage> {
           appBar: AppBar(
             backgroundColor: Themes.getTheme().primaryColor,
             elevation: 0,
-            title: const Text(
-              'Themes',
+            title: Text(
+              context.l10n.themePageTitle,
             ),
           ),
           body: Ink(

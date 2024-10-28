@@ -5,6 +5,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:sound_ground/src/app.dart';
 import 'package:sound_ground/src/bloc/favorites/favorites_bloc.dart';
 import 'package:sound_ground/src/bloc/home/home_bloc.dart';
+import 'package:sound_ground/src/bloc/language/language_cubit.dart';
 import 'package:sound_ground/src/bloc/player/player_bloc.dart';
 import 'package:sound_ground/src/bloc/playlists/playlists_cubit.dart';
 import 'package:sound_ground/src/bloc/recents/recents_bloc.dart';
@@ -65,6 +66,9 @@ Future<void> main() async {
         ),
         BlocProvider(
           create: (context) => sl<PlaylistsCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => sl<LanguageCubit>(),
         ),
       ],
       child: const MyApp(),

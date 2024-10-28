@@ -1,0 +1,22 @@
+{
+  "appTitle" : "SoundGround",
+  "themePageTitle": "Themes",
+  "settingsPageTitle": "Settings",
+  "settingsPageScanMusicButton": "Scan music",
+  "settingsPageScanMusicButtonSubtitle": "Ignore songs which don\\'t satisfy the requirements",
+  "settingsPageLanguageButton": "Language",
+  "settingsPageVersionButton": "Version",
+  "scanPageTitle": "Scan",
+  "scanPageMinDuration": "Ignore duration less than:",
+  "scanPageDurationUnit": "seconds",
+  "scanPageMinSize": "Ignore size less than:",
+  "homePageSongTabTitle": "Songs",
+  "homePagePlaylistTabTitle": "Playlists",
+  "homePageArtistsTabTitle": "Artists",
+  "songViewSortBy": "Sort by",
+  "songViewOrderBy": "Order by",
+  "songViewToastMessage": "songs found",
+  "songViewSongCount": "songs",
+  "searchBoxHintText": "Search"
+
+}

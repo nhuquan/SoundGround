@@ -7,6 +7,7 @@ import 'package:sound_ground/src/core/constants/assets.dart';
 import 'package:sound_ground/src/core/extensions/string_extensions.dart';
 import 'package:sound_ground/src/core/theme/themes.dart';
 import 'package:sound_ground/src/data/services/hive_box.dart';
+import 'package:sound_ground/src/l10n/build_context_ext.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({super.key});
@@ -37,8 +38,8 @@ class _ScanPageState extends State<ScanPage> {
       appBar: AppBar(
         backgroundColor: Themes.getTheme().primaryColor,
         elevation: 0,
-        title: const Text(
-          'Scan',
+        title: Text(
+          context.l10n.scanPageTitle,
         ),
       ),
       body: Ink(
@@ -58,14 +59,14 @@ class _ScanPageState extends State<ScanPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
-                'Ignore duration less than:',
+                context.l10n.scanPageMinDuration,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
             for (int i = 0; i < durationGroupValue.length; i++)
               RadioListTile(
                 title: Text(
-                  '${durationGroupValue[i]} ${'second'.pluralize(durationGroupValue[i])}',
+                  '${durationGroupValue[i]} ${context.l10n.scanPageDurationUnit}',
                 ),
                 value: durationGroupValue[i],
                 groupValue: durationValue,
@@ -81,7 +82,7 @@ class _ScanPageState extends State<ScanPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
-                'Ignore size less than:',
+                context.l10n.scanPageMinSize,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
