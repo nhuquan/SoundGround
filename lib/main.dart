@@ -1,3 +1,4 @@
+import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -38,40 +39,66 @@ Future<void> main() async {
 
   // run app
   runApp(
-    MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => sl<HomeBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<ThemeBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<SongBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<FavoritesBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<PlayerBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<RecentsBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<SearchBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<ScanCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<PlaylistsCubit>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<LanguageCubit>(),
-        ),
-      ],
-      child: const MyApp(),
-    ),
+    MyAppWithFeedback(),
   );
+}
+
+class MyAppWithFeedback extends StatelessWidget {
+  const MyAppWithFeedback({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BetterFeedback(
+      localeOverride: const Locale('en'),
+      mode: FeedbackMode.draw,
+      pixelRatio: 1,
+      darkTheme: FeedbackThemeData.dark(),
+      theme: FeedbackThemeData(
+        background: Colors.grey,
+        feedbackSheetColor: Colors.grey[50]!,
+        drawColors: [
+          Colors.red,
+          Colors.green,
+          Colors.blue,
+          Colors.yellow,
+          Colors.purple,
+        ],
+      ),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => sl<HomeBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<ThemeBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<SongBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<FavoritesBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<PlayerBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<RecentsBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<SearchBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<ScanCubit>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<PlaylistsCubit>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<LanguageCubit>(),
+          ),
+        ],
+        child: const MyApp(),
+      ),
+    );
+  }
 }

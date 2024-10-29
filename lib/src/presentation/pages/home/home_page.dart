@@ -1,6 +1,12 @@
+import 'dart:io';
+import 'dart:typed_data';
+
+import 'package:feedback/feedback.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:sound_ground/src/bloc/language/language_cubit.dart';
 import 'package:sound_ground/src/bloc/theme/theme_bloc.dart';
@@ -138,9 +144,35 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           },
           icon: const Icon(Icons.search_outlined),
           tooltip: context.l10n.searchBoxHintText,
-        )
+        ),
+        IconButton(
+          onPressed: () {
+            BetterFeedback.of(context).show((feedback) async {
+              final screenshotFilePath =
+                  await writeImageToStorage(feedback.screenshot);
+              final Email email = Email(
+                body: feedback.text,
+                subject: 'SoundGround feedback',
+                recipients: ['quandangnhu@gmail.com'],
+                attachmentPaths: [screenshotFilePath],
+                isHTML: false,
+              );
+              await FlutterEmailSender.send(email);
+            });
+          },
+          icon: const Icon(Icons.bug_report_outlined),
+          tooltip: context.l10n.searchBoxHintText,
+        ),
       ],
     );
+  }
+
+  Future<String> writeImageToStorage(Uint8List screenshot) async {
+    final Directory output = await getTemporaryDirectory();
+    final String screenshotFilePath = '${output.path}/feedback.png';
+    final File screenshotFile = File(screenshotFilePath);
+    await screenshotFile.writeAsBytes(screenshot);
+    return screenshotFilePath;
   }
 
   Drawer _buildDrawer(BuildContext context) {

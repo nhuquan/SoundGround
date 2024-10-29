@@ -9,10 +9,12 @@ environment:
 dependencies:
   bloc: ^8.1.4 # state management
   equatable: ^2.0.5
+  feedback: ^3.1.0
   flutter:
     sdk: flutter # flutter sdk
   flutter_bloc: ^8.1.6 # state management
   flutter_cache_manager: ^3.4.1
+  flutter_email_sender: ^6.0.3
   flutter_localizations:
     sdk: flutter
   flutter_staggered_animations: ^1.1.1 # animation
@@ -27,6 +29,7 @@ dependencies:
   marquee: ^2.2.3
   on_audio_query: ^2.9.0 # get songs from device
   package_info_plus: ^8.0.2 # get app info
+  path_provider: ^2.1.5
   permission_handler: ^11.3.1 # get permission
   rxdart: ^0.28.0 # stream
   share_plus: ^10.0.2 # share song
