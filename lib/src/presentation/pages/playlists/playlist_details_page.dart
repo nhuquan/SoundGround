@@ -137,12 +137,11 @@ class _AddSongToPlaylistState extends State<AddSongToPlaylist> {
                           song,
                         );
                   } else {
-                    // TODO: Remove song from playlist
-                    // widget.songs.remove(song);
-                    // context.read<PlaylistsCubit>().removeFromPlaylist(
-                    //       widget.playlist.id,
-                    //       song.id,
-                    //     );
+                    widget.songs.remove(song);
+                    context.read<PlaylistsCubit>().removeFromPlaylist(
+                          widget.playlist.id,
+                          song.id,
+                        );
                   }
                   setState(() {});
                 },
