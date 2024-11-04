@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-import 'package:sound_ground/src/bloc/playlists/playlists_cubit.dart';
+import 'package:sound_ground/src/bloc/playlists/playlists_bloc.dart';
 import 'package:sound_ground/src/core/constants/assets.dart';
 import 'package:sound_ground/src/core/extensions/string_extensions.dart';
 import 'package:sound_ground/src/core/router/app_router.dart';
@@ -24,7 +25,7 @@ class _PlaylistsViewState extends State<PlaylistsView>
   @override
   void initState() {
     super.initState();
-    context.read<PlaylistsCubit>().queryPlaylists();
+    context.read<PlaylistsBloc>().add(GetPlaylistsEvent());
   }
 
   @override
@@ -84,16 +85,13 @@ class _PlaylistsViewState extends State<PlaylistsView>
           ),
 
           // show playlists
-          BlocListener<PlaylistsCubit, PlaylistsState>(
+          BlocListener<PlaylistsBloc, PlaylistsState>(
             listener: (context, state) {
               if (state is PlaylistsLoaded) {
                 playlists = state.playlists;
               }
-              if (state is PlaylistsSongsLoaded) {
-                context.read<PlaylistsCubit>().queryPlaylists();
-              }
             },
-            child: BlocBuilder<PlaylistsCubit, PlaylistsState>(
+            child: BlocBuilder<PlaylistsBloc, PlaylistsState>(
               buildWhen: (previous, current) => current is PlaylistsLoaded,
               builder: (context, state) {
                 return ListView.builder(
@@ -103,29 +101,87 @@ class _PlaylistsViewState extends State<PlaylistsView>
                   padding: const EdgeInsets.only(bottom: 100),
                   itemBuilder: (context, index) {
                     final playlist = playlists[index];
-                    return ListTile(
-                      onTap: () {
-                        Navigator.of(context).pushNamed(
-                          AppRouter.playlistDetailsRoute,
-                          arguments: playlist,
-                        );
-                      },
-                      onLongPress: () {
-                        // delete playlist
-                        showDialog(
-                          context: context,
-                          builder: (context) => _buildDeletePlaylistDialog(
-                            playlist,
-                            context,
+                    return Slidable(
+                      key: Key(playlist.id.toString()),
+                      // The start action pane is the one at the left or the top side.
+                      startActionPane: ActionPane(
+                        // A motion is a widget used to control how the pane animates.
+                        motion: const BehindMotion(),
+                        dragDismissible: false,
+                        // A pane can dismiss the Slidable.
+                        // dismissible: DismissiblePane(onDismissed: () {}),
+
+                        // All actions are defined in the children parameter.
+                        children: [
+                          SlidableAction(
+                            onPressed: (context) => {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) =>
+                                      _buildDeletePlaylistDialog(
+                                        playlist,
+                                        context,
+                                      ))
+                            },
+                            backgroundColor: Color(0xFFFE4A49),
+                            foregroundColor: Colors.white,
+                            icon: Icons.delete,
+                            label: 'Delete',
                           ),
-                        );
-                      },
-                      leading: const Icon(Icons.music_note),
-                      title: Text(playlist.playlist),
-                      subtitle: Text(
-                        '${playlist.numOfSongs} ${'song'.pluralize(playlist.numOfSongs)}',
+                          // SlidableAction(
+                          //   onPressed: null,
+                          //   backgroundColor: Color(0xFF21B7CA),
+                          //   foregroundColor: Colors.white,
+                          //   icon: Icons.share,
+                          //   label: 'Share',
+                          // ),
+                        ],
                       ),
-                      trailing: const Icon(Icons.chevron_right),
+
+                      // The end action pane is the one at the right or the bottom side.
+                      endActionPane: ActionPane(
+                        motion: ScrollMotion(),
+                        children: [
+                          // SlidableAction(
+                          //   // An action can be bigger than the others.
+                          //   // flex: 1,
+                          //   onPressed: (context) => {
+                          //     showDialog(
+                          //         context: context,
+                          //         builder: (context) => RenamePlaylistDialog(
+                          //               playlist: playlist,
+                          //             ))
+                          //   },
+                          //   backgroundColor: Color(0xFF7BC043),
+                          //   foregroundColor: Colors.white,
+                          //   icon: Icons.edit,
+                          //   label: 'Rename',
+                          // ),
+                          SlidableAction(
+                            onPressed: (context) => {
+                              debugPrint('play playlist'),
+                            },
+                            backgroundColor: Color(0xFF0392CF),
+                            foregroundColor: Colors.white,
+                            icon: Icons.play_arrow,
+                            label: 'Play',
+                          ),
+                        ],
+                      ),
+                      child: ListTile(
+                        onTap: () {
+                          Navigator.of(context).pushNamed(
+                            AppRouter.playlistDetailsRoute,
+                            arguments: playlist,
+                          );
+                        },
+                        leading: const Icon(Icons.music_note),
+                        title: Text(playlist.playlist),
+                        subtitle: Text(
+                          '${playlist.numOfSongs} ${'song'.pluralize(playlist.numOfSongs)}',
+                        ),
+                        trailing: const Icon(Icons.chevron_right),
+                      ),
                     );
                   },
                 );
@@ -153,7 +209,7 @@ class _PlaylistsViewState extends State<PlaylistsView>
         ),
         TextButton(
           onPressed: () async {
-            context.read<PlaylistsCubit>().deletePlaylist(playlist.id);
+            context.read<PlaylistsBloc>().add(DeletePlaylistEvent(playlist.id));
             Navigator.of(context).pop();
           },
           child: const Text('Confirm'),
@@ -245,6 +301,7 @@ class AddPlaylistDialog extends StatefulWidget {
 
 class _AddPlaylistDialogState extends State<AddPlaylistDialog> {
   final TextEditingController _controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -273,12 +330,68 @@ class _AddPlaylistDialogState extends State<AddPlaylistDialog> {
             }
 
             // Step 2: Add playlist
-            context.read<PlaylistsCubit>().createPlaylist(playlistName);
+            context
+                .read<PlaylistsBloc>()
+                .add(CreatePlaylistEvent(playlistName));
 
             // Step 3: Close dialog
             Navigator.of(context).pop();
           },
           child: const Text('Add'),
+        ),
+      ],
+    );
+  }
+}
+
+class RenamePlaylistDialog extends StatefulWidget {
+  const RenamePlaylistDialog({super.key, required this.playlist});
+
+  final PlaylistModel playlist;
+
+  @override
+  State<RenamePlaylistDialog> createState() => _RenamePlaylistDialog();
+}
+
+class _RenamePlaylistDialog extends State<RenamePlaylistDialog> {
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Rename playlist'),
+      content: TextField(
+        controller: _controller,
+        decoration: const InputDecoration(
+          hintText: 'Playlist name',
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Text('Cancel'),
+        ),
+        TextButton(
+          onPressed: () async {
+            // Step 1: Gather playlist information
+            String playlistName = _controller.text.trim();
+            if (playlistName.isEmpty) {
+              // return, show an error message if the name is empty
+              Fluttertoast.showToast(msg: 'Playlist name cannot be empty');
+              return;
+            }
+
+            // Step 2: Add playlist
+            context
+                .read<PlaylistsBloc>()
+                .add(RenamePlaylistEvent(widget.playlist.id, playlistName));
+
+            // Step 3: Close dialog
+            Navigator.of(context).pop();
+          },
+          child: const Text('Confirm'),
         ),
       ],
     );

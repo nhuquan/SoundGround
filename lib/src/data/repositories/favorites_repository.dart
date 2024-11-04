@@ -6,6 +6,8 @@ import 'package:sound_ground/src/data/services/hive_box.dart';
 
 class FavoritesRepository {
   final box = Hive.box(HiveBox.boxName);
+
+  //
   Future<List<SongModel>> fetchFavorites() async {
     List<String> favoriteSongsIds = box.get(
       HiveBox.favoriteSongsKey,

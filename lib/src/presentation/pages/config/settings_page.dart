@@ -74,47 +74,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   leading: const Icon(Icons.language_outlined),
                   title: Text(context.l10n.settingsPageLanguageButton),
                   onTap: () async {
-                    showModalBottomSheet<void>(
-                        context: context,
-                        isScrollControlled: true,
-                        useSafeArea: true,
-                        builder: (BuildContext context) {
-                          return BlocProvider.value(
-                            value: BlocProvider.of<ThemeBloc>(context),
-                            child: _DropdownBottomSheetItemContainer(
-                              child: Column(
-                                children: [
-                                  DropdownBottomSheetItem<String>(
-                                    item: 'en',
-                                    child: ListTile(
-                                      title: const Text('English'),
-                                      onTap: () {
-                                        // change language
-                                        context
-                                            .read<LanguageCubit>()
-                                            .changeLang('en');
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ),
-                                  DropdownBottomSheetItem<String>(
-                                    item: 'vi',
-                                    child: ListTile(
-                                      title: const Text('Vietnamese'),
-                                      onTap: () {
-                                        // change language
-                                        context
-                                            .read<LanguageCubit>()
-                                            .changeLang('vi');
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        });
+                    _buildModalBottomSheet(context);
                   },
                 ),
                 // package info
@@ -125,6 +85,41 @@ class _SettingsPageState extends State<SettingsPage> {
         );
       },
     );
+  }
+
+  void _buildModalBottomSheet(BuildContext context) {
+    showModalBottomSheet<void>(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(25),
+          ),
+        ),
+        context: context,
+        builder: (BuildContext context) {
+          return BlocProvider.value(
+            value: BlocProvider.of<ThemeBloc>(context),
+            child: Wrap(
+              children: [
+                ListTile(
+                  title: const Text('English'),
+                  onTap: () {
+                    // change language
+                    context.read<LanguageCubit>().changeLang('en');
+                    Navigator.of(context).pop();
+                  },
+                ),
+                ListTile(
+                  title: const Text('Vietnamese'),
+                  onTap: () {
+                    // change language
+                    context.read<LanguageCubit>().changeLang('vi');
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            ),
+          );
+        });
   }
 
   ListTile _buildPackageInfoTile(BuildContext context) {

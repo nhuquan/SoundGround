@@ -10,6 +10,7 @@ part 'player_state.dart';
 
 class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
   PlayerBloc({required MusicPlayer repository}) : super(PlayerInitial()) {
+    //
     on<PlayerLoadSongs>((event, emit) async {
       try {
         emit(PlayerLoading());
@@ -19,6 +20,7 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
         emit(PlayerError(e.toString()));
       }
     });
+
     on<PlayerPlay>((event, emit) async {
       try {
         await repository.play();

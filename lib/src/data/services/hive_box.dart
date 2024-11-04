@@ -4,6 +4,7 @@ class HiveBox {
   static const String themeKey = 'theme';
 
   static const String favoriteSongsKey = 'favoriteSongs';
+  static const String playlists = 'playlists';
 
   static const String lastPlayedPlaylistKey = 'lastPlayedPlaylist';
   static const String recentlyPlayedSongsKey = 'recentlyPlayedSongs';

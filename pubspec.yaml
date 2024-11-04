@@ -17,6 +17,7 @@ dependencies:
   flutter_email_sender: ^6.0.3
   flutter_localizations:
     sdk: flutter
+  flutter_slidable: ^3.1.1
   flutter_staggered_animations: ^1.1.1 # animation
   fluttertoast: ^8.2.8
   get_it: ^8.0.0 # dependency injection

@@ -180,26 +180,26 @@ class _SongListTileState extends State<SongListTile> {
       builder: (context) {
         return Wrap(
           children: [
-            ListTile(
-              // border radius same as bottom sheet
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(25),
-                ),
-              ),
-              leading: const Icon(Icons.playlist_add_outlined),
-              title: const Text('Add to queue'),
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.playlist_add_outlined),
-              title: const Text('Add to playlist'),
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-            ),
+            // ListTile(
+            //   // border radius same as bottom sheet
+            //   shape: const RoundedRectangleBorder(
+            //     borderRadius: BorderRadius.vertical(
+            //       top: Radius.circular(25),
+            //     ),
+            //   ),
+            //   leading: const Icon(Icons.playlist_add_outlined),
+            //   title: const Text('Add to queue'),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //   },
+            // ),
+            // ListTile(
+            //   leading: const Icon(Icons.playlist_add_outlined),
+            //   title: const Text('Add to playlist'),
+            //   onTap: () {
+            //     Navigator.of(context).pop();
+            //   },
+            // ),
             ListTile(
               leading: const Icon(Icons.share_outlined),
               title: const Text('Share'),

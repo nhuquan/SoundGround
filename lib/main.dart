@@ -8,7 +8,7 @@ import 'package:sound_ground/src/bloc/favorites/favorites_bloc.dart';
 import 'package:sound_ground/src/bloc/home/home_bloc.dart';
 import 'package:sound_ground/src/bloc/language/language_cubit.dart';
 import 'package:sound_ground/src/bloc/player/player_bloc.dart';
-import 'package:sound_ground/src/bloc/playlists/playlists_cubit.dart';
+import 'package:sound_ground/src/bloc/playlists/playlists_bloc.dart';
 import 'package:sound_ground/src/bloc/recents/recents_bloc.dart';
 import 'package:sound_ground/src/bloc/scan/scan_cubit.dart';
 import 'package:sound_ground/src/bloc/search/search_bloc.dart';
@@ -91,7 +91,7 @@ class MyAppWithFeedback extends StatelessWidget {
             create: (context) => sl<ScanCubit>(),
           ),
           BlocProvider(
-            create: (context) => sl<PlaylistsCubit>(),
+            create: (context) => sl<PlaylistsBloc>(),
           ),
           BlocProvider(
             create: (context) => sl<LanguageCubit>(),
