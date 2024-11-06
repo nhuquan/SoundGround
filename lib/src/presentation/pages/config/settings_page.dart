@@ -78,7 +78,6 @@ class _SettingsPageState extends State<SettingsPage> {
                   },
                 ),
                 // package info
-                _buildPackageInfoTile(context),
                 ListTile(
                   leading: const Icon(Icons.headset_mic_outlined),
                   title: Text(context.l10n.settingsPageAboutButton),
@@ -127,51 +126,6 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           );
         });
-  }
-
-  ListTile _buildPackageInfoTile(BuildContext context) {
-    return ListTile(
-      leading: const Icon(Icons.info_outline),
-      title: Text(context.l10n.settingsPageVersionButton),
-      subtitle: Text(
-        _packageInfo.version,
-      ),
-      onTap: () async {
-        // show package info
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('Package info'),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Name: ${_packageInfo.appName}',
-                ),
-                Text(
-                  'Package: ${_packageInfo.packageName}',
-                ),
-                Text(
-                  'Version: ${_packageInfo.version}',
-                ),
-                Text(
-                  'Build number: ${_packageInfo.buildNumber}',
-                ),
-              ],
-            ),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('Close'),
-              ),
-            ],
-          ),
-        );
-      },
-    );
   }
 }
 
