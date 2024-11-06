@@ -25,7 +25,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get settingsPageLanguageButton => 'Ngôn ngữ';
 
   @override
-  String get settingsPageVersionButton => 'Phiên bản ứng dụng';
+  String get settingsPageVersionButton => 'Phiên bản';
+
+  @override
+  String get settingsPageAboutButton => 'Tác giả';
 
   @override
   String get scanPageTitle => 'Tìm kiếm bài hát';
@@ -59,6 +62,21 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get songViewSongCount => 'bài hát';
+
+  @override
+  String get aboutPageTitle => 'Cảm ơn bạn rất nhiều!';
+
+  @override
+  String get aboutPageSubtitle => 'Mình chỉ là một anh kỹ sư thích tự code và phát triển sản phẩm để giải quyết những vấn đề của bản thân. Nếu bạn thích ứng dụng này, hãy ủng hộ mình nhé!';
+
+  @override
+  String get aboutPageQRHint => 'Hỗ trơ trực tiếp cho mình qua QRCode này hoặc là qua';
+
+  @override
+  String get aboutPageEnding => 'Gửi email cho mình nhé!';
+
+  @override
+  String get aboutPagePatreonButton => 'Patreon';
 
   @override
   String get searchBoxHintText => 'Tìm kiếm theo tên bài hát';

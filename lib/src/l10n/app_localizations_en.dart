@@ -28,6 +28,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsPageVersionButton => 'Version';
 
   @override
+  String get settingsPageAboutButton => 'About';
+
+  @override
   String get scanPageTitle => 'Scan';
 
   @override
@@ -59,6 +62,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get songViewSongCount => 'songs';
+
+  @override
+  String get aboutPageTitle => 'Thank you!';
+
+  @override
+  String get aboutPageSubtitle => 'We deeply appreciate your support in using this app. It’s users like you who make our work worthwhile. If you’re enjoying the experience and would like to support us further, consider checking out our Patreon page. Your support, no matter how small, helps us improve and bring new features to life!';
+
+  @override
+  String get aboutPageQRHint => 'Use this QR code if you have a Vietnamese bank account, Or';
+
+  @override
+  String get aboutPageEnding => 'Drop me an email if you have any questions or feedback, thank you!';
+
+  @override
+  String get aboutPagePatreonButton => 'Support on Patreon';
 
   @override
   String get searchBoxHintText => 'Search';

@@ -79,6 +79,13 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 // package info
                 _buildPackageInfoTile(context),
+                ListTile(
+                  leading: const Icon(Icons.headset_mic_outlined),
+                  title: Text(context.l10n.settingsPageAboutButton),
+                  onTap: () async {
+                    Navigator.of(context).pushNamed(AppRouter.aboutRoute);
+                  },
+                ),
               ],
             ),
           ),

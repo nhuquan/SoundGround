@@ -137,6 +137,12 @@ abstract class AppLocalizations {
   /// **'Version'**
   String get settingsPageVersionButton;
 
+  /// No description provided for @settingsPageAboutButton.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get settingsPageAboutButton;
+
   /// No description provided for @scanPageTitle.
   ///
   /// In en, this message translates to:
@@ -202,6 +208,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'songs'**
   String get songViewSongCount;
+
+  /// No description provided for @aboutPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you!'**
+  String get aboutPageTitle;
+
+  /// No description provided for @aboutPageSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We deeply appreciate your support in using this app. It’s users like you who make our work worthwhile. If you’re enjoying the experience and would like to support us further, consider checking out our Patreon page. Your support, no matter how small, helps us improve and bring new features to life!'**
+  String get aboutPageSubtitle;
+
+  /// No description provided for @aboutPageQRHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Use this QR code if you have a Vietnamese bank account, Or'**
+  String get aboutPageQRHint;
+
+  /// No description provided for @aboutPageEnding.
+  ///
+  /// In en, this message translates to:
+  /// **'Drop me an email if you have any questions or feedback, thank you!'**
+  String get aboutPageEnding;
+
+  /// No description provided for @aboutPagePatreonButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Support on Patreon'**
+  String get aboutPagePatreonButton;
 
   /// No description provided for @searchBoxHintText.
   ///

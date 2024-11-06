@@ -5,7 +5,8 @@
   "settingsPageScanMusicButton": "Tìm kiếm bài hát",
   "settingsPageScanMusicButtonSubtitle": "Bỏ qua bài hát không đáp ứng yêu cầu",
   "settingsPageLanguageButton": "Ngôn ngữ",
-  "settingsPageVersionButton": "Phiên bản ứng dụng",
+  "settingsPageVersionButton": "Phiên bản",
+  "settingsPageAboutButton": "Tác giả",
   "scanPageTitle": "Tìm kiếm bài hát",
   "scanPageMinDuration": "Thời lượng tối thiểu:",
   "scanPageDurationUnit": "giây",
@@ -17,5 +18,10 @@
   "songViewOrderBy": "Thứ tự",
   "songViewToastMessage": "bài hát được tìm thấy",
   "songViewSongCount": "bài hát",
+  "aboutPageTitle": "Cảm ơn bạn rất nhiều!",
+  "aboutPageSubtitle": "Mình chỉ là một anh kỹ sư thích tự code và phát triển sản phẩm để giải quyết những vấn đề của bản thân. Nếu bạn thích ứng dụng này, hãy ủng hộ mình nhé!",
+  "aboutPageQRHint": "Hỗ trơ trực tiếp cho mình qua QRCode này hoặc là qua",
+  "aboutPageEnding": "Gửi email cho mình nhé!",
+  "aboutPagePatreonButton": "Patreon",
   "searchBoxHintText": "Tìm kiếm theo tên bài hát"
 }

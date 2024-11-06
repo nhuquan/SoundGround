@@ -6,6 +6,7 @@
   "settingsPageScanMusicButtonSubtitle": "Ignore songs which don\\'t satisfy the requirements",
   "settingsPageLanguageButton": "Language",
   "settingsPageVersionButton": "Version",
+  "settingsPageAboutButton": "About",
   "scanPageTitle": "Scan",
   "scanPageMinDuration": "Ignore duration less than:",
   "scanPageDurationUnit": "seconds",
@@ -17,6 +18,11 @@
   "songViewOrderBy": "Order by",
   "songViewToastMessage": "songs found",
   "songViewSongCount": "songs",
+  "aboutPageTitle": "Thank you!",
+  "aboutPageSubtitle": "We deeply appreciate your support in using this app. It’s users like you who make our work worthwhile. If you’re enjoying the experience and would like to support us further, consider checking out our Patreon page. Your support, no matter how small, helps us improve and bring new features to life!",
+  "aboutPageQRHint": "Use this QR code if you have a Vietnamese bank account, Or",
+  "aboutPageEnding": "Drop me an email if you have any questions or feedback, thank you!",
+  "aboutPagePatreonButton": "Support on Patreon",
   "searchBoxHintText": "Search"
 
 }

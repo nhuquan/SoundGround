@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:sound_ground/src/presentation/pages/config/about_page.dart';
 import 'package:sound_ground/src/presentation/pages/config/scan_page.dart';
 import 'package:sound_ground/src/presentation/pages/config/settings_page.dart';
 import 'package:sound_ground/src/presentation/pages/config/themes_page.dart';
@@ -30,6 +31,7 @@ class AppRouter {
   static const String queueRoute = '/queue';
   static const String searchRoute = '/search';
   static const String scanRoute = '/scan';
+  static const String aboutRoute = '/about';
   static const String addSongToPlaylistRoute = '/addSongToPlaylist';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -84,6 +86,10 @@ class AppRouter {
       case scanRoute:
         return MaterialPageRoute<dynamic>(
           builder: (_) => const ScanPage(),
+        );
+      case aboutRoute:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => const AboutPage(),
         );
       case playlistDetailsRoute:
         return MaterialPageRoute<dynamic>(
