@@ -12,6 +12,12 @@ class AboutPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("About"),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await _sendEmail();
+        },
+        child: const Icon(Icons.send),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -63,17 +69,17 @@ class AboutPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              InkWell(
-                onTap: () async {
-                  // Send email
-                  await _sendEmail();
-                },
-                child: Text(
-                  context.l10n.aboutPageEnding,
-                  style: const TextStyle(fontSize: 16),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+              // InkWell(
+              //   onTap: () async {
+              //     // Send email
+              //     await _sendEmail();
+              //   },
+              //   child: Text(
+              //     context.l10n.aboutPageEnding,
+              //     style: const TextStyle(fontSize: 16),
+              //     textAlign: TextAlign.center,
+              //   ),
+              // ),
             ],
           ),
         ),
